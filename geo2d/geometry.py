@@ -33,7 +33,7 @@ coordinates in this case.
 import math
 import random
 # user defined module
-import utils as u
+from . import  utils as u
 
 
 # acceptable uncertainty for calculating intersections and such
@@ -516,11 +516,11 @@ class Vector(GeometricObject):
                 self._y = args[1][1] - args[0][1]
                 self._calculate_polar_coords()
                 return
-            if coordinates is 'cartesian':
+            if coordinates == 'cartesian':
                 self._x = args[0]
                 self._y = args[1]
                 self._calculate_polar_coords()
-            if coordinates is 'polar':
+            if coordinates == 'polar':
                 self._rho = args[0]
                 self._phi = u.float_to_2pi(args[1])
                 self._calculate_cartesian_coords()
